@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('welcome'); })->name('/');
+Route::get('/', function () { return view('frontend.home'); })->name('/');
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+
+
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'check_permission'], function () {
         Route::get('/dashboard', function () {  return view('backend.dashboard.index'); })->name('dashboard');
