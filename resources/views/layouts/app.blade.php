@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') {{ config('app.name', 'Jadroo-IT') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -16,13 +16,11 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
-<body class="bg-slate-100 dark:bg-slate-900">
+<body class="bg-slate-100 dark:bg-[#081724]">
     <div class="container-wrapper">
         @include('layouts.partials.sidebar')
-
         <div class="main">
             @include('layouts.partials.header')
-
             <div class="m-4 wrapper">
                 {{ $slot }}
             </div>

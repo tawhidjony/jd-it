@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\ProductController;
@@ -24,7 +25,7 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'check_permission'], function () {
-        Route::get('/dashboard', function () {  return view('backend.dashboard.index'); })->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('users', UserController::class);
         Route::resource('roles', RoleController::class);
     });
