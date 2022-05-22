@@ -16,6 +16,12 @@ module.exports = {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
+            boxShadow: {
+                "navigation-before-white": "35px 35px 0 10px #f1f5f9",
+                "navigation-before-black": "35px 35px 0 10px #081724",
+                "navigation-after-white": "35px -35px 0 10px #f1f5f9",
+                "navigation-after-black": "35px -35px 0 10px #081724",
+            },
         },
     },
 

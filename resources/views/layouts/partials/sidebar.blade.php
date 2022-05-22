@@ -1,13 +1,13 @@
-<div class="navigation border-l-[15px] border-gray-400 bg-gray-400 dark:border-gray-900 dark:bg-slate-900">
+<div class="navigation border-l-[15px] border-gray-400 bg-gray-400 dark:border-gray-800 dark:bg-gray-800">
     <ul>
         <li>
-            <a href="">
-                <span class="text-4xl text-white icon lab la-laravel"></span>
-                <span class="text-xl text-white uppercase title">Laravel Dashboard</span>
+            <a href="{{ route('dashboard') }}">
+                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" style="width: 65%;
+                margin-top: 25px;" alt="" />
             </a>
         </li>
         <li class="active">
-            <a href="">
+            <a href="{{ route('dashboard') }}">
                 <span class="text-lg icon las la-tachometer-alt"></span>
                 <span class="title">Dashboard</span>
             </a>

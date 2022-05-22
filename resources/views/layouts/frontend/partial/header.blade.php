@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-6 rounded dark:bg-gray-800">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="https://flowbite.com" class="flex items-center">
+        <a href="{{ route('/') }}" class="flex items-center">
             <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo">
             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
         </a>

@@ -95,11 +95,11 @@
                     $.each(allData, function(index, value) {
                         allProductData += `
                         <div class="col-span-2">
-                            <x-card class="h-[350px]">
-                                <x-card.header class="p-0 overflow-hidden rounded-tl rounded-tr">
+                            <x-card class="w-full h-[350px]">
+                                <div class="overflow-hidden rounded-tl p-0 w-full rounded-tr">
                                     <img src="${value.featured_image.url}/${value.featured_image.file_name}"
                                         class="object-cover w-full h-56" alt="${value.name}">
-                                </x-card.header>
+                                </div>
                                 <x-card.body class="p-2">
                                     <h2 class="text-base text-base font-bold">
                                         ${value.name.length > 45 ? value.name.substring(0, 45) + '...' : value.name}
