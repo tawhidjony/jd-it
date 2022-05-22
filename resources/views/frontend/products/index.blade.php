@@ -52,45 +52,15 @@
     </style>
 @endpush
 @section('content')
+    <div>
+        <h2 class="w-full bg-gray-100 rounded p-3 my-4 font-black text-2xl">Products</h2>
+    </div>
     <section>
-
-        <div class="grid grid-cols-12 gap-6 " id="allProductData">
-
-            {{-- @forelse ($allProduct as $key => $item)
-                <div class="col-span-2">
-                    <x-card class="h-[350px]">
-                        <x-card.header class="p-0 overflow-hidden rounded-tl rounded-tr">
-                            <img src="{{ $item['featured_image']['url'] . '/' . $item['featured_image']['file_name'] }}"
-                                class="object-cover w-full h-56" alt="{{ $item['name'] }}">
-                        </x-card.header>
-                        <x-card.body class="p-2">
-                            <h2 class="text-base ">
-                                @if (strlen($item['name']) > 45)
-                                    {{ substr($item['name'], 0, 45) . '...' }}
-                                @else
-                                    {{ $item['name'] }}
-                                @endif
-                            </h2>
-                        </x-card.body>
-                        <x-card.footer class="flex justify-end px-2 py-3">
-                            <a href="#" class="p-2 text-white bg-blue-500 rounded ">
-                                Add to cart
-                            </a>
-                        </x-card.footer>
-                    </x-card>
-                </div>
-            @empty
-            @endforelse --}}
-
-        </div>
+        <div class="grid grid-cols-12 gap-6 " id="allProductData"></div>
     </section>
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-
-
-    </div>
+    <div id="myModal" class="modal"></div>
 
 @endsection
 @push('scripts')
@@ -109,6 +79,16 @@
                 url: `https://contents.jadroo.com/api/v1/partner/products?slug=jadroo-it-bd-ltd&page=${page}`,
                 type: 'GET',
                 dataType: 'json',
+                // beforeSend: function() {
+                //     $('#allProductData').html(`
+            //         <div class="loaderProduct col-span-12 h-[calc(100vh-35vh)] ">
+            //             <div class="flex flex-col justify-center items-center h-full">
+            //                 <img src="{{ asset('assets/Images/loader.gif') }}" alt="">
+            //                 <p class="text-center text-gray-700 p-0 m-0">Loading...</p>
+            //             </div>
+            //         </div>
+            //     `);
+                // },
                 success: function(res) {
                     var allData = res.results.products.data;
                     var allProductData = '';
@@ -121,17 +101,22 @@
                                         class="object-cover w-full h-56" alt="${value.name}">
                                 </x-card.header>
                                 <x-card.body class="p-2">
-                                    <h2 class="text-base ">
-                                        ${value.name}
+                                    <h2 class="text-base text-base font-bold">
+                                        ${value.name.length > 45 ? value.name.substring(0, 45) + '...' : value.name}
                                     </h2>
                                 </x-card.body>
-                                <x-card.footer class="flex justify-end px-2 py-3">
-                                    <button id="myBtn"  data-id="${value.product_slug}" class="p-2 mr-2 text-white bg-blue-500 rounded viewDetails">
-                                       View
-                                    </button>
-                                    <a href="${`https://www.jadroo.com/products/${value.product_slug}`}" target="_blank" class="p-2 text-white bg-blue-500 rounded ">
-                                       Buy now
-                                    </a>
+                                <x-card.footer class="px-2 py-3 ">
+                                            <p class="text-gray-700 pb-2 font-bold">
+                                                <span class="text-gray-700 pb-2 font-black">৳</span> ${value.sku_list.length > 0 ? value.sku_list[0].regular_price : 'N/A'}
+                                            </p>
+                                            <div class="flex justify-between items-center">
+                                                <button id="myBtn" data-id="${value.product_slug}" class="w-full border rounded bg-indigo-500 text-white viewDetails">
+                                                    <i class="las la-eye text-2xl"></i>
+                                                </button>
+                                                <a href="${`https://www.jadroo.com/products/${value.product_slug}`}" target="_blank" class="w-full block bg-indigo-500 border rounded text-white text-center">
+                                                    <i class="las la-shopping-cart text-2xl"></i>
+                                                </a>
+                                            </div>
                                 </x-card.footer>
                             </x-card>
                         </div>
@@ -141,7 +126,10 @@
                 },
                 error: function(error) {
                     console.log(error);
-                }
+                },
+                // complete: function() {
+                //     $('.loaderProduct').css('display', 'none');
+                // }
             });
         }
 
@@ -153,32 +141,44 @@
                 dataType: 'json',
                 beforeSend: function() {
                     $('#myModal').html(`
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
+                        <div class="modal-content text-center w-full">
                             <div class="text-center">
-                                <img src="https://www.jadroo.com/assets/images/loader.gif" alt="">
+                                <img src="{{ asset('assets/Images/loader.gif') }}" alt="">
                             </div>
                         </div>
                     `);
                 },
                 success: function(res) {
                     var singleData = res.product;
-                    console.log(singleData);
                     var modalSingleData = '';
                     modalSingleData += `
                     <div class="modal-content">
                         <div class="flex items-center justify-between w-full p-4 border-b">
-                            <div><h2>Product details</h2></div>
+                            <div><h2 class="text-2xl font-black">Product details</h2></div>
                             <div class="close">&times;</div>
                         </div>
                         <div class="p-4">
                            <div class="grid grid-cols-12 gap-6 ">
-                            <div class="col-span-4 bg-gray-500">
-                                <img src="${singleData.featured_image.url}/${singleData.featured_image.file_name}" alt="">
+                            <div class="col-span-4">
+                                <img src="${singleData.featured_image.url}/${singleData.featured_image.file_name}" class="border p-4 rounded" alt="">
                             </div>
                             <div class="col-span-8">
-                                <h2>${singleData.name}</h2>
-                                <p>${singleData.short_desc}</p>
+                                <div>
+                                    <h2 class="font-black text-2xl">${singleData.name}</h2>
+                                </div>
+                                <div class="border-t pt-2">
+                                    <h2 class="font-black text-2xl">Description:</h2>
+                                </div>
+                                <div class="">
+                                    <p class="pt-2">${singleData.short_desc}</p>
+                                </div>
+                                <div class="my-6">
+                                    <a href="${`https://www.jadroo.com/products/${singleData.product_slug}`}" target="_blank" class="px-4 py-2 bg-indigo-500 rounded text-white text-center">
+                                        Buy Now
+                                        </a>
+
+                                </div>
+
                             </div>
                             </div>
                         </div>
