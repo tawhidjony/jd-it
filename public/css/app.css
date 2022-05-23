@@ -672,6 +672,9 @@ select {
 .col-span-8 {
   grid-column: span 8 / span 8;
 }
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
 .m-4 {
   margin: 1rem;
 }
@@ -743,6 +746,12 @@ select {
 }
 .-mr-2 {
   margin-right: -0.5rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
 }
 .block {
   display: block;

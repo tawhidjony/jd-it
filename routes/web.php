@@ -4,6 +4,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\ProductController;
+use App\Http\Livewire\Contact\Contact;
+use App\Http\Livewire\Profile\Profile;
+use App\Http\Livewire\Setting\Settings;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +25,13 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 
 
 
-
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'check_permission'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('users', UserController::class);
+        Route::get('/settings', Settings::class)->name('settings');
+        Route::get('/profile', Profile::class)->name('profile');
+        Route::get('/contact', Contact::class)->name('contact');
+        Route::resource('roles', RoleController::class);
         Route::resource('roles', RoleController::class);
     });
 });
