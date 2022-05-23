@@ -21,7 +21,7 @@
             <div id="dropdown_content"
                 class="absolute right-0 z-50 hidden w-48 py-1 mt-2 bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-md shadow-lg">
                 <div class="px-4 py-2 text-xs text-gray-400">Manage Account</div>
-                <a href="#"
+                <a href="{{ route('profile') }}"
                     class="block px-4 py-2 text-sm leading-5 text-gray-700 transition dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-[#121212]"><i
                         class="las la-user-circle"></i> Profile</a>
                 <div class="border-t border-gray-100 dark:border-gray-700"></div>

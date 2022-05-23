@@ -1,13 +1,13 @@
 <div class="navigation border-l-[15px] border-gray-400 bg-gray-400 dark:border-gray-800 dark:bg-gray-800">
     <ul>
         <li>
-            <a href="{{ route('dashboard') }}">
-                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" style="width: 65%;
-                margin-top: 25px;" alt="" />
+            <a href="">
+                <span class="text-4xl text-white icon lab la-laravel"></span>
+                <span class="text-xl text-white uppercase title">Jadroo-IT </span>
             </a>
         </li>
         <li class="active">
-            <a href="{{ route('dashboard') }}">
+            <a href="">
                 <span class="text-lg icon las la-tachometer-alt"></span>
                 <span class="title">Dashboard</span>
             </a>
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{{ route('settings') }}">
                 <span class="text-lg icon las la-cog"></span>
                 <span class="title">Settings</span>
             </a>

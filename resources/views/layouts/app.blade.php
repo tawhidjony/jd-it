@@ -8,6 +8,7 @@
 
     <title>@yield('title') {{ config('app.name', 'Jadroo-IT') }}</title>
 
+    @livewireStyles
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="stylesheet"
@@ -27,7 +28,9 @@
         </div>
     </div>
 
+    @livewireScripts
     <!-- choose one -->
+    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
     <script>
         // Toggle menu
