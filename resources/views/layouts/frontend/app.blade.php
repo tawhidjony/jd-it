@@ -14,14 +14,12 @@
 </head>
 
 <body class="antialiased">
-    <div class="container">
-        @include('layouts.frontend.partial.header')
-        <div class="p-4">
-            @yield('content')
-        </div>
-        @include('layouts.frontend.partial.footer')
-    </div>
+    @include('layouts.frontend.partial.header')
+    @yield('content')
+    @include('layouts.frontend.partial.footer')
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script>
         $.ajaxSetup({
             headers: {

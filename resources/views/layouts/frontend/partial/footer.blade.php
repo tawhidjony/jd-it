@@ -1,8 +1,15 @@
-<footer class="p-4 bg-white sm:p-6 dark:bg-gray-800 mt-6">
+<footer class="bg-slate-800">
+    <div class="container">
+
+    </div>
+</footer>
+
+
+{{-- <footer class="p-4 mt-6 bg-white sm:p-6 dark:bg-gray-800">
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
             <a href="https://jadrooit.com.com" class="flex items-center">
-                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" class="mr-3 h-8" alt="">
+                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" class="h-8 mr-3" alt="">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
             </a>
         </div>
@@ -85,4 +92,4 @@
             </a>
         </div>
     </div>
-</footer>
+</footer> --}}

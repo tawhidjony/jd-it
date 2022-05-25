@@ -119,3 +119,9 @@
 .min-h-card {
     min-height: calc(100vh - 10vh);
 }
+
+/* .hover-clip {
+    clip-path: circle(10% at 90% 20%);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+} */
