@@ -4256,6 +4256,9 @@ textarea.form-control.is-invalid {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -4267,9 +4270,6 @@ textarea.form-control.is-invalid {
 }
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
 }
 .block {
   display: block;
@@ -4331,12 +4331,6 @@ textarea.form-control.is-invalid {
 .h-\[400px\] {
   height: 400px;
 }
-.h-\[450px\] {
-  height: 450px;
-}
-.h-\[250px\] {
-  height: 250px;
-}
 .h-28 {
   height: 7rem;
 }
@@ -4348,6 +4342,9 @@ textarea.form-control.is-invalid {
 }
 .h-6 {
   height: 1.5rem;
+}
+.h-\[450px\] {
+  height: 450px;
 }
 .h-9 {
   height: 2.25rem;
@@ -4385,17 +4382,14 @@ textarea.form-control.is-invalid {
 .w-\[480px\] {
   width: 480px;
 }
-.w-4\/6 {
-  width: 66.666667%;
-}
-.w-\[330px\] {
-  width: 330px;
-}
 .w-\[650px\] {
   width: 650px;
 }
 .w-14 {
   width: 3.5rem;
+}
+.w-4\/6 {
+  width: 66.666667%;
 }
 .w-4 {
   width: 1rem;
@@ -4527,9 +4521,6 @@ textarea.form-control.is-invalid {
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
@@ -4597,16 +4588,6 @@ textarea.form-control.is-invalid {
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4626,6 +4607,11 @@ textarea.form-control.is-invalid {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .self-center {
   align-self: center;
@@ -4828,10 +4814,6 @@ textarea.form-control.is-invalid {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
-}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -4940,10 +4922,6 @@ textarea.form-control.is-invalid {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 .py-14 {
   padding-top: 3.5rem;
@@ -5845,10 +5823,6 @@ textarea.form-control.is-invalid {
 }
 @media (min-width: 640px) and (max-width: 767px) {
 
-  .sm\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;
@@ -5963,10 +5937,6 @@ textarea.form-control.is-invalid {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  .md\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
   }
@@ -5984,20 +5954,16 @@ textarea.form-control.is-invalid {
     margin-top: 0px;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
-  .md\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .md\:mt-4 {
     margin-top: 1rem;
   }
 
   .md\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:block {
@@ -6012,20 +5978,8 @@ textarea.form-control.is-invalid {
     display: none;
   }
 
-  .md\:h-\[330px\] {
-    height: 330px;
-  }
-
-  .md\:h-\[230px\] {
-    height: 230px;
-  }
-
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-\[330px\] {
-    width: 330px;
   }
 
   .md\:w-\[230px\] {
@@ -6070,12 +6024,6 @@ textarea.form-control.is-invalid {
     margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
   }
 
-  .md\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
   .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -6105,11 +6053,6 @@ textarea.form-control.is-invalid {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  .md\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
   }
 
   .md\:py-8 {
@@ -6176,22 +6119,16 @@ textarea.form-control.is-invalid {
     gap: 2.5rem;
   }
 
-  .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-  }
-
-  .lg\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-  }
-
   .lg\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
   }
 
   .lg\:px-8 {
@@ -6231,11 +6168,6 @@ textarea.form-control.is-invalid {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-  }
-
-  .xl\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 }
 @media (min-width: 1536px) {
