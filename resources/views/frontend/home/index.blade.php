@@ -44,22 +44,22 @@ $partner = [
         'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '1' => [
-        'url' => 'https://www.pikpng.com/pngl/b/524-5241792_contact-big-company-logos-png-clipart.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '2' => [
-        'url' => 'https://www.pikpng.com/pngl/m/464-4645588_logo-big-construction-companies-in-the-philippines-clipart.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '3' => [
-        'url' => 'https://www.pikpng.com/pngl/m/212-2127944_latest-sports-news-on-cricket-badminton-tennis-and.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '4' => [
-        'url' => 'https://www.pikpng.com/pngl/m/13-137696_tennis-sega-sports-logo-png-transparent-sega-sports.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '5' => [
-        'url' => 'https://www.pikpng.com/pngl/m/13-136513_sega-sports-logo-png-transparent-graphics-clipart.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '6' => [
-        'url' => 'https://www.pikpng.com/pngl/m/13-136972_sega-game-gear-sega-game-gear-logo-clipart.png',
+        'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
     ],
     '7' => [
         'url' => 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png',
@@ -71,24 +71,24 @@ $partner = [
 @section('content')
     @include('frontend.home.partials.slider')
 
-    <section class="">
-        <div class="h-auto my-10 space-y-4 text-center">
+    <section>
+        <div class="h-auto md:my-6 lg:my-10 xl:my-10 2xl:my-10 space-y-4 text-center">
             <h3 class="text-4xl font-black capitalize "><span class="text-green-600">Our</span> Solutions</h3>
-            <p class="w-2/6 mx-auto">
+            <p class="w-3/6 mx-auto">
                 With our innovative tools and solutions tailored to empower your business,
                 you just need to sit back and see your problems solved, business
                 operations accelerated and team productivity boosted.
             </p>
         </div>
 
-        <div class="container my-28">
+        <div class="container md:my-14 lg:my-16 xl:my-[50px] 2xl:my-20">
             <div class="grid grid-cols-12 gap-10">
                 @foreach ([1, 2, 3, 4, 5, 6] as $key => $item)
                     <div
-                        class="md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-4 h-[400px] bg-[#f1f2f3]  transition delay-150 duration-300 border-green-200 ease-in-out hover:-translate-y-4 hover:shadow-2xl hover:shadow-slate-300 border rounded ">
+                        class="md:col-span-6 lg:col-span-6 xl:col-span-4 2xl:col-span-4 h-[400px] bg-[#f1f2f3]  transition delay-150 duration-300 border-green-200 ease-in-out hover:-translate-y-4 hover:shadow-2xl hover:shadow-slate-300 border rounded ">
 
                         <div
-                            class="flex flex-col items-center justify-start w-full px-5 md:py-4 lg:py-6 2xl:py-8 md:space-y-4 lg:space-y-3 xl:space-y-6 2xl:space-y-6">
+                            class="flex flex-col items-center justify-start w-full px-5 md:py-4 lg:py-6 xl:py-8 2xl:py-8 md:space-y-4 lg:space-y-3 xl:space-y-4 2xl:space-y-6">
                             <div class="flex items-center justify-center w-20 h-20 border border-green-200 rounded-full ">
                                 <i class="las la-bullhorn text-5xl origin-center -rotate-[33deg] "></i>
                             </div>
@@ -117,17 +117,17 @@ $partner = [
     </section>
 
     <section class="bg-slate-200 2xl:h-[450px]">
-        <div class="container md:py-8">
+        <div class="container md:py-8 xl:py-10 2xl:py-12">
             <div
                 class="md:flex md:flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-10 xl:grid xl:grid-cols-2 xl:gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 md:py-4 lg:py-14">
                 <div class="md:col-span-2">
-                    <div class="md:mt-4 lg:mt-8 md:space-y-3 lg:space-y-6">
-                        <div class="md:mb-8">
+                    <div class="md:mt-4 lg:mt-8 md:space-y-3 xl:pl-4 lg:space-y-6">
+                        <div class="md:mb-8 xl:mb-8 2xl:mb-8">
                             <h2 class="text-2xl font-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                 Sapiente
                                 aliquid alias maxime expedita
                                 molestiae non iure necessitatibus,</h2>
-                            <p class="mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, a in!
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, a in!
                                 Dolorem quas culpa sed
                                 nemo esse soluta fuga. Repudiandae deleniti consequatur sunt et blanditiis iusto voluptatum
                                 eos
@@ -159,7 +159,7 @@ $partner = [
     </section>
 
     <section class="2xl:h-[450px]">
-        <div class="container md:py-8">
+        <div class="container md:py-8 xl:py-10 2xl:py-10">
             <div
                 class="md:flex md:flex-col lg:grid lg:grid-cols-2 lg:gap-10 xl:grid xl:grid-cols-2 xl:gap-10 2xl:grid 2xl:grid-cols-2 2xl:gap-10 md:py-4 lg:py-14">
                 <div class="col-span-1">
@@ -169,13 +169,13 @@ $partner = [
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <div class="md:mt-4 lg:mt-8 md:space-y-3 lg:space-y-6">
+                    <div class="md:mt-4 lg:mt-8 md:space-y-3 xl:pr-4 lg:space-y-6">
                         <div class="mb-8">
                             <h2 class="text-2xl font-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                 Sapiente
                                 aliquid alias maxime expedita
                                 molestiae non iure necessitatibus,</h2>
-                            <p class="mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, a in!
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, a in!
                                 Dolorem quas culpa sed
                                 nemo esse soluta fuga. Repudiandae deleniti consequatur sunt et blanditiis iusto voluptatum
                                 eos
@@ -204,8 +204,9 @@ $partner = [
     <section class="bg-slate-200 2xl:h-[350px]">
         <div class="container">
 
-            <div class=" 2xl:mx-auto md:space-y-6 2xl:space-x-6 2xl:flex 2xl:w-4/6 py-14">
-                <div class="md:w-[230px] md:mx-auto 2xl:w-[330px] 2xl:h-[250px] overflow-hidden">
+            <div class=" xl:mx-auto 2xl:mx-auto lg:mx-auto md:space-y-6 2xl:space-x-6 xl:space-x-6 lg:space-x-6 lg:flex lg:w-5/6 xl:flex xl:w-4/6 2xl:flex 2xl:w-4/6 py-14">
+
+                <div class="md:w-[230px] md:mx-auto lg:w-[330px] lg:h-[250px] xl:w-[330px] xl:h-[250px] 2xl:w-[330px] 2xl:h-[250px] overflow-hidden">
                     <img class="p-1 bg-contain border-2 border-green-500 rounded"
                         src="https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
                         alt="">
@@ -237,7 +238,7 @@ $partner = [
         <div class="container">
             <div class="grid grid-cols-12 gap-6">
                 @foreach ($portfolio as $item)
-                    <div class="col-span-3">
+                    <div class="md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-3">
                         <div class="overflow-hidden rounded h-[400px] border rounde"
                             style="background: url({{ $item['url'] }})">
 
@@ -250,55 +251,6 @@ $partner = [
                     </div>
                 @endforeach
 
-                {{-- <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px] bg-gradient-to-r from-cyan-500 to-blue-500">
-                        <img class="w-full h-full m-6 overflow-hidden duration-500 ease-in hover:scale-125 "
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-span-3">
-                    <div class="overflow-hidden h-[400px]">
-                        <img class="duration-500 ease-in hover:scale-125"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"
-                            alt="">
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
@@ -375,7 +327,7 @@ $partner = [
         <div class="container">
             <div class="grid grid-cols-12 gap-6">
                 @foreach ($partner as $item)
-                    <div class="col-span-3">
+                    <div class="md:col-span-6  lg:col-span-4 xl:col-span-4 2xl:col-span-3">
                         <img src="{{ $item['url'] }}" class="object-contain w-full p-2 border rounded shadow h-28" alt="">
                     </div>
                 @endforeach

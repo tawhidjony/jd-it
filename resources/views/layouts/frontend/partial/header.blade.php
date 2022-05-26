@@ -16,7 +16,7 @@
     <div class="h-14 bg-indigo-100">
         <div class="container flex items-center h-full">
             <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium 2xl:flex-row 2xl:space-x-8 2xl:mt-0 2xl:text-sm 2xl:font-medium">
                     <li>
                         <a href="{{ route('/') }}"
                             class="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-white"
