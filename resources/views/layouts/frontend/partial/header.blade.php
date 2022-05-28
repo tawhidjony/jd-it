@@ -1,104 +1,111 @@
+@php
+$megamenu = [
+    '0' => [
+        'icon' => 'las la-laptop-code',
+        'url' => '#',
+        'title' => 'Web development',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '1' => [
+        'icon' => 'lab la-google-play',
+        'url' => '#',
+        'title' => 'App development',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '2' => [
+        'icon' => 'las la-palette',
+        'url' => '#',
+        'title' => 'Graphics design',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '3' => [
+        'icon' => 'las la-chart-line',
+        'url' => '#',
+        'title' => 'Digital Marketing',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '4' => [
+        'icon' => 'lab la-searchengin',
+        'url' => '#',
+        'title' => 'SEO',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '5' => [
+        'icon' => 'las la-cut',
+        'url' => '#',
+        'title' => 'Clipping path',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '6' => [
+        'icon' => 'las la-network-wired',
+        'url' => '#',
+        'title' => 'Domain ',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '7' => [
+        'icon' => 'las la-server',
+        'url' => '#',
+        'title' => 'Hosting',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+    '8' => [
+        'icon' => 'las la-wind',
+        'url' => '#',
+        'title' => 'Machine learning',
+        'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    ],
+];
+
+@endphp
 <header>
     <div class="h-20">
-        <div class="container flex justify-between items-center h-full">
+        <div class="container flex items-center justify-between h-full">
             <div class="flex items-center">
-                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" alt="" class="w-36 pr-3">
-                <h1 class="border-l pl-3 text-2xl">Jadroo-IT</h1>
+                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" alt="" class="pr-3 w-36">
+                <h1 class="pl-3 text-2xl border-l">Jadroo-IT</h1>
             </div>
             <div>
-                <a href="{{ route('contact.index') }}" class="shadow-sm px-4 py-2 rounded bg-green-600 text-white">Get
+                <a href="{{ route('contact.index') }}" class="px-4 py-2 text-white bg-green-600 rounded shadow-sm">Get
                     in
                     Contact</a>
             </div>
         </div>
     </div>
 
-    <div class="h-14 bg-indigo-100">
+    <nav class="bg-[#1e293b] md:hidden lg:block ">
         <div class="container flex items-center h-full">
-            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-                <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium 2xl:flex-row 2xl:space-x-8 2xl:mt-0 2xl:text-sm 2xl:font-medium">
-                    <li>
-                        <a href="{{ route('/') }}"
-                            class="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-white"
-                            aria-current="page">Home</a>
+            <div class="p-0 m-0 mega_menu" id="mobile-menu">
+                <ul class="relative flex items-center justify-center 2xl:space-x-4 2xl:py-3 text-white">
+                    <li class="lg:px-3 lg:py-2 xl:px-3 xl:py-2 hover:text-green-600"><a href="">Home</a></li>
+                    <li class="lg:px-3 lg:py-4 xl:px-3 xl:py-2 hover:text-green-600 ">
+                        <a href="#">Services</a>
+                        <div class="z-10 mt-4 sub_menu bg-white border rounded ">
+                            <div class="grid grid-cols-12 gap-6">
+                                @foreach ($megamenu as $item)
+                                    <div class="col-span-4">
+                                        <a href="#" class="flex p-2 hover:bg-gray-200 hover:rounded cursor-pointer">
+                                            <div class="flex-none bg-green-600 w-12 h-12 rounded-full ">
+                                                <i
+                                                    class="{{ $item['icon'] }} text-2xl text-white flex justify-center items-center w-full h-full "></i>
+                                            </div>
+                                            <div class="flex-initial pl-3">
+                                                <h3 class="text-base font-black text-gray-900 capitalize">
+                                                    {{ $item['title'] }}</h3>
+                                                </h3>
+                                                <p class="text-slate-500 text-sm">{{ $item['decs'] }}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('product.index') }}"
-                            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Product</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About
-                            us</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Career</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                    </li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Product</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">About</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Career</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Contact</a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
-{{-- <nav class="bg-white border-gray-200 px-2 sm:px-4 py-6 rounded dark:bg-gray-800">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="{{ route('/') }}" class="flex items-center">
-            <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" class="h-6 mr-3 sm:h-9"
-                alt="Flowbite Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
-        </a>
-        <button data-collapse-toggle="mobile-menu" type="button"
-            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"></path>
-            </svg>
-            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
-            </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                <li>
-                    <a href="{{ route('/') }}"
-                        class="block py-2 pl-3 pr-4 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-white"
-                        aria-current="page">Home</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                </li>
-                <li>
-                    <a href="{{ route('product.index') }}"
-                        class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Product</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About
-                        us</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Career</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav> --}}

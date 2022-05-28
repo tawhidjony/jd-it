@@ -13,7 +13,7 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: '2rem',
+            padding: "2rem",
         },
         extend: {
             fontFamily: {
@@ -24,6 +24,9 @@ module.exports = {
                 "navigation-before-black": "35px 35px 0 10px #081724",
                 "navigation-after-white": "35px -35px 0 10px #f1f5f9",
                 "navigation-after-black": "35px -35px 0 10px #081724",
+            },
+            backgroundImage: {
+                "hero-pattern": "url('/assets/images/vector/footer.svg')",
             },
         },
         screens: {

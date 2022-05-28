@@ -204,9 +204,11 @@ $partner = [
     <section class="bg-slate-200 2xl:h-[350px]">
         <div class="container">
 
-            <div class=" xl:mx-auto 2xl:mx-auto lg:mx-auto md:space-y-6 2xl:space-x-6 xl:space-x-6 lg:space-x-6 lg:flex lg:w-5/6 xl:flex xl:w-4/6 2xl:flex 2xl:w-4/6 py-14">
+            <div
+                class=" xl:mx-auto 2xl:mx-auto lg:mx-auto md:space-y-6 2xl:space-x-6 xl:space-x-6 lg:space-x-6 lg:flex lg:w-5/6 xl:flex xl:w-4/6 2xl:flex 2xl:w-4/6 py-14">
 
-                <div class="md:w-[230px] md:mx-auto lg:w-[330px] lg:h-[250px] xl:w-[330px] xl:h-[250px] 2xl:w-[330px] 2xl:h-[250px] overflow-hidden">
+                <div
+                    class="md:w-[230px] md:mx-auto lg:w-[330px] lg:h-[250px] xl:w-[330px] xl:h-[250px] 2xl:w-[330px] 2xl:h-[250px] overflow-hidden">
                     <img class="p-1 bg-contain border-2 border-green-500 rounded"
                         src="https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
                         alt="">
