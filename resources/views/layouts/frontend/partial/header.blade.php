@@ -19,7 +19,7 @@ $megamenu = [
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     ],
     '3' => [
-        'icon' => 'las la-chart-line',
+        'icon' => 'las la-signal',
         'url' => '#',
         'title' => 'Digital Marketing',
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -37,7 +37,7 @@ $megamenu = [
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     ],
     '6' => [
-        'icon' => 'las la-network-wired',
+        'icon' => 'las la-globe',
         'url' => '#',
         'title' => 'Domain ',
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -49,7 +49,7 @@ $megamenu = [
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     ],
     '8' => [
-        'icon' => 'las la-wind',
+        'icon' => 'las la-brain',
         'url' => '#',
         'title' => 'Machine learning',
         'decs' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
