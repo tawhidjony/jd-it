@@ -52,12 +52,13 @@
     </style>
 @endpush
 @section('content')
-    <div>
-        <h2 class="w-full bg-gray-100 rounded p-3 my-4 font-black text-2xl">Products</h2>
+
+    <div class="container">
+        <div>
+            <h2 class="w-full bg-gray-100 rounded p-3  font-black text-2xl my-10">Products</h2>
+        </div>
+        <div class="grid grid-cols-12 gap-6 " id="allProductData"> </div>
     </div>
-    <section>
-        <div class="grid grid-cols-12 gap-6 " id="allProductData"></div>
-    </section>
 
     <!-- The Modal -->
     <div id="myModal" class="modal"></div>
@@ -79,46 +80,30 @@
                 url: `https://contents.jadroo.com/api/v1/partner/products?slug=jadroo-it-bd-ltd&page=${page}`,
                 type: 'GET',
                 dataType: 'json',
-                // beforeSend: function() {
-                //     $('#allProductData').html(`
-            //         <div class="loaderProduct col-span-12 h-[calc(100vh-35vh)] ">
-            //             <div class="flex flex-col justify-center items-center h-full">
-            //                 <img src="{{ asset('assets/Images/loader.gif') }}" alt="">
-            //                 <p class="text-center text-gray-700 p-0 m-0">Loading...</p>
-            //             </div>
-            //         </div>
-            //     `);
-                // },
                 success: function(res) {
                     var allData = res.results.products.data;
                     var allProductData = '';
                     $.each(allData, function(index, value) {
                         allProductData += `
                         <div class="col-span-2">
-                            <x-card class="w-full h-[350px]">
-                                <div class="overflow-hidden rounded-tl p-0 w-full rounded-tr">
-                                    <img src="${value.featured_image.url}/${value.featured_image.file_name}"
-                                        class="object-cover w-full h-56" alt="${value.name}">
+                            <div class="card-product shadow-sm border rounded">
+                                <div class="product-img">
+                                    <img src="${value.featured_image.url}/${value.featured_image.file_name}" alt="">
                                 </div>
-                                <x-card.body class="p-2">
-                                    <h2 class="text-base text-base font-bold">
-                                        ${value.name.length > 45 ? value.name.substring(0, 45) + '...' : value.name}
-                                    </h2>
-                                </x-card.body>
-                                <x-card.footer class="px-2 py-3 ">
-                                            <p class="text-gray-700 pb-2 font-bold">
-                                                <span class="text-gray-700 pb-2 font-black">৳</span> ${value.sku_list.length > 0 ? value.sku_list[0].regular_price : 'N/A'}
-                                            </p>
-                                            <div class="flex justify-between items-center">
-                                                <button id="myBtn" data-id="${value.product_slug}" class="w-full border rounded bg-indigo-500 text-white viewDetails">
-                                                    <i class="las la-eye text-2xl"></i>
-                                                </button>
-                                                <a href="${`https://www.jadroo.com/products/${value.product_slug}`}" target="_blank" class="w-full block bg-indigo-500 border rounded text-white text-center">
-                                                    <i class="las la-shopping-cart text-2xl"></i>
-                                                </a>
-                                            </div>
-                                </x-card.footer>
-                            </x-card>
+                                <div class="add-to-card">
+                                        <button id="myBtn" data-id="${value.product_slug}" class="add-to-card-btn rounded viewDetails">view</button>
+                                        <a href="${`https://www.jadroo.com/products/${value.product_slug}`}" target="_blank" class="add-to-card-btn rounded">add to cart</a>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="title">
+                                        <h3> ${value.name.length > 45 ? value.name.substring(0, 45) + '...' : value.name}</h3>
+                                    </div>
+                                    <div class="price">
+                                        <small>৳</small>
+                                        <small>${value.sku_list.length > 0 ? value.sku_list[0].regular_price : 'N/A'}</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     `;
                     });
@@ -127,9 +112,6 @@
                 error: function(error) {
                     console.log(error);
                 },
-                // complete: function() {
-                //     $('.loaderProduct').css('display', 'none');
-                // }
             });
         }
 
@@ -209,3 +191,51 @@
         });
     </script>
 @endpush
+
+{{-- <div class="col-span-2">
+    <div class="card-product shadow-sm border rounded">
+       <div class="product-img">
+           <img src="https://admin.jadroo.com/uploads/media/2022/02/b5UEZoviKc/GSWF-2MP.jpg" alt="">
+       </div>
+       <div class="add-to-card">
+            <button class="add-to-card-btn rounded">view</button>
+            <button class="add-to-card-btn rounded">add to cart</button>
+       </div>
+       <div class="card-footer">
+           <div class="title">
+               <h3>Lorem ipsum dolor sit amet consectetur </h3>
+           </div>
+           <div class="price">
+              <small>$</small>
+              <small>2500</small>
+           </div>
+       </div>
+    </div>
+</div> --}}
+
+{{-- <div class="col-span-2">
+    <x-card class="w-full h-[350px]">
+        <div class="overflow-hidden rounded-tl p-0 w-full rounded-tr">
+            <img src="${value.featured_image.url}/${value.featured_image.file_name}"
+                class="object-cover w-full h-56" alt="${value.name}">
+        </div>
+        <x-card.body class="p-2">
+            <h2 class="text-base text-base font-bold">
+                ${value.name.length > 45 ? value.name.substring(0, 45) + '...' : value.name}
+            </h2>
+        </x-card.body>
+        <x-card.footer class="px-2 py-3 ">
+                    <p class="text-gray-700 pb-2 font-bold">
+                        <span class="text-gray-700 pb-2 font-black">৳</span> ${value.sku_list.length > 0 ? value.sku_list[0].regular_price : 'N/A'}
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <button id="myBtn" data-id="${value.product_slug}" class="w-full border rounded bg-indigo-500 text-white viewDetails">
+                            <i class="las la-eye text-2xl"></i>
+                        </button>
+                        <a href="${`https://www.jadroo.com/products/${value.product_slug}`}" target="_blank" class="w-full block bg-indigo-500 border rounded text-white text-center">
+                            <i class="las la-shopping-cart text-2xl"></i>
+                        </a>
+                    </div>
+        </x-card.footer>
+    </x-card>
+</div> --}}
