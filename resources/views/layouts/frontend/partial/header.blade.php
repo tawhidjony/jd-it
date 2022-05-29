@@ -100,10 +100,10 @@ $megamenu = [
                             </div>
                         </div>
                     </li>
-                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Product</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="{{route('product.index')}}">Product</a></li>
                     <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">About</a></li>
                     <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Career</a></li>
-                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Contact</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="{{route('contact.index')}}">Contact</a></li>
                 </ul>
             </div>
         </div>

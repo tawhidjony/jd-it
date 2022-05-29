@@ -4,19 +4,33 @@ $serviceItems = ['Web development', 'App development', 'Graphics design', 'Digit
 @extends('layouts.frontend.app')
 @section('title', 'Contact us')
 @section('content')
-    <section>
-        <div>
+    <section class="mt-20">
+        <div class="container">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-3 border-r">
-                    <h2 class="font-black text-2xl text-center underline mb-6">Headquarter</h2>
-                    <div>
-                        <p class="font-bold text-lg"><span><i class="las la-home"></i></span>
+                <div class="col-span-4">
+                 <div class="space-y-10 px-8 ">
+                    <div class="space-y-4">
+                        <h2 class="font-black text-2xl text-center underline">Bangladesh Office</h2>
+                        <p class="text-base"><span><i class="las la-home text-xl font-black"></i></span>
                             KA-18/1 (8th,9th, 10th floor), Rasulbag,
                             Saheed Tajuddin Ahmed Avenue, Mohakhali, Dhaka-1212.
                         </p>
                     </div>
+                    <div class="space-y-4">
+                        <h2 class="font-black text-2xl text-center underline">China Office</h2>
+                        <p class="text-base"><span><i class="las la-home text-xl font-black"></i></span>
+                            Room-1804, 18th Floor, North Tower, Gunaghzou World Trade Centre, No.371-375, Huan Shi Dong Road Guangzhou, Guangdong, China
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="font-black text-2xl text-center underline">USA Office</h2>
+                        <p class="text-base"><span><i class="las la-home text-xl font-black"></i></span>
+                            The Corporation 97-32 72ND Drive, Forest Hills, NY, 11375, USA Debashish Debnath 88-16 Burdette PL, Jamaica, NY, 11432, USA
+                        </p>
+                    </div>
+                 </div>
                 </div>
-                <div class="col-span-9">
+                <div class="col-span-8  border-l pl-8">
                     <form action="{{ route('contact.store') }}" method="POST">
                         @csrf
                         <div class="grid grid-cols-2 gap-6">
@@ -44,7 +58,7 @@ $serviceItems = ['Web development', 'App development', 'Graphics design', 'Digit
 
                             </div>
                             <div class="col-span-1">
-                                <x-label>First Name</x-label>
+                                <x-label class="mb-2">First Name</x-label>
                                 <x-input type="text" name="first_name" class="w-full"
                                     placeholder="Enter your first name" />
                                 @error('first_name')
@@ -52,7 +66,7 @@ $serviceItems = ['Web development', 'App development', 'Graphics design', 'Digit
                                 @enderror
                             </div>
                             <div class="col-span-1">
-                                <x-label>Last Name</x-label>
+                                <x-label class="mb-2">Last Name</x-label>
                                 <x-input type="text" name="last_name" class="w-full"
                                     placeholder="Enter your last name" />
                                 @error('last_name')
@@ -60,14 +74,14 @@ $serviceItems = ['Web development', 'App development', 'Graphics design', 'Digit
                                 @enderror
                             </div>
                             <div class="col-span-1">
-                                <x-label>Email</x-label>
+                                <x-label class="mb-2">Email</x-label>
                                 <x-input type="text" name="email" class="w-full" placeholder="Enter your email" />
                                 @error('email')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-span-1">
-                                <x-label>Phone</x-label>
+                                <x-label class="mb-2">Phone</x-label>
                                 <x-input type="number" name="phone" class="w-full" placeholder="Enter your phone" />
                                 @error('phone')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -88,7 +102,7 @@ $serviceItems = ['Web development', 'App development', 'Graphics design', 'Digit
                                 @enderror
                             </div>
                             <div class="col-span-2">
-                                <x-label>Message</x-label>
+                                <x-label class="mb-2">Message</x-label>
                                 <x-textarea name="" name="message" id="" cols="30" class="w-full " rows="3"
                                     placeholder="Write your message" />
                                 @error('message')
