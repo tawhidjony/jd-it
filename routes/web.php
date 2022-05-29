@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Livewire\Profile\Profile;
 use App\Http\Livewire\Setting\Settings;
+use App\Http\Livewire\Slider\SliderComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::post('/contact-store', [ContactController::class, 'store'])->name('contac
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'check_permission'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/sliders', SliderComponent::class)->name('slider.index');
         Route::get('/settings', Settings::class)->name('settings');
         Route::get('/profile', Profile::class)->name('profile');
         Route::resource('roles', RoleController::class);
