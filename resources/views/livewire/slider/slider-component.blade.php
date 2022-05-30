@@ -1,7 +1,6 @@
 <div>
     @section('title', 'Slider |')
     @if ($slider_list)
-
         <x-card>
             <x-card.header>
                 <h2>Slider List</h2>
@@ -30,6 +29,7 @@
                         </div>
                     @endif
                 </div>
+
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -62,10 +62,10 @@
                                     {{$key +  1 }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ $item->title }}
+                                    <img src="{{asset('storage')}}/{{$item->img_url}}" class="w-14 h-14 rounded drop-shadow-lg" alt="">
                                 </td>
                                 <td class="px-6 py-4">
-                                    <img src="{{$item->img_url}}" alt="">
+                                    {{ $item->title }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->created_at }}
@@ -74,9 +74,9 @@
                                     {{ $item->updated_at }}
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    {{-- <x-button type="button" wire:click.prevent="editProduct({{ $item->id }})">Edit
+                                    <x-button type="button" wire:click.prevent="editItem({{ $item->id }})">Edit
                                     </x-button>
-                                    <x-button type="button" class="bg-red-500"
+                                    {{-- <x-button type="button" class="bg-red-500"
                                         wire:click.prevent="deleteConfirmation({{ $item->id }})">Delete
                                     </x-button> --}}
                                 </td>
@@ -91,6 +91,7 @@
                     </tbody>
                 </table>
             </x-card.body>
+
             @if ($sliders->total() > 10)
                 <x-card.footer>
                     {{ $sliders->links() }}
@@ -101,14 +102,11 @@
 
     @endif
 
-
-
-
     @if ($create)
         @include('livewire.slider.create')
     @endif
-    {{-- @if ($edit)
+    @if ($edit)
         @include('livewire.slider.edit')
-    @endif --}}
+    @endif
 
 </div>

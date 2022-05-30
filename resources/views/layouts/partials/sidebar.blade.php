@@ -1,3 +1,43 @@
+@php
+    $sideBarMenuList = [
+        '0' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '1' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '2' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '3' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '4' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '5' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+        '6' => [
+            'icon' => '',
+            'route' => 'slider.index',
+            'title' => 'Slider',
+            ],
+];
+@endphp
+
 <div class="navigation border-l-[15px] border-gray-400 bg-gray-400 dark:border-gray-800 dark:bg-gray-800">
     <ul>
         <li>
@@ -13,9 +53,9 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{{route('slider.index')}}">
                 <span class="text-lg icon las la-user"></span>
-                <span class="title">Users</span>
+                <span class="title">Slider</span>
             </a>
         </li>
         <li>
