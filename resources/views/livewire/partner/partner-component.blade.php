@@ -1,10 +1,10 @@
 <div>
-    @section('title', 'Slider |')
-    @if ($slider_list)
+    @section('title', 'Partners |')
+    @if ($table_list)
         <x-card>
             <x-card.header>
-                <h2>Slider List</h2>
-                <x-button wire:click.prevent="createItem()">Add New Slider</x-button>
+                <h2>Partners List</h2>
+                <x-button wire:click.prevent="createItem()">Add New Partners</x-button>
             </x-card.header>
             <x-card.body>
                 <div class="p-4">
@@ -29,10 +29,10 @@
                                 SL
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Slider Image
+                                Partners Image
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Title
+                                Name
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Create at
@@ -47,17 +47,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($sliders as $key=>$item)
+                        @forelse ($partners as $key=>$item)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                    {{$loop->index +1 }}
+                                    {{$key +  1 }}
                                 </th>
                                 <td class="px-6 py-4">
                                     <img src="{{asset('storage')}}/{{$item->img_url}}" class="w-14 h-14 rounded drop-shadow-lg" alt="">
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $item->title }}
+                                    {{ $item->name ?? 'Null' }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->created_at }}
@@ -75,7 +75,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6" class="text-center p-6">
+                                <td colspan="8" class="text-center p-6">
                                     <span class="text-gray-500 p-6 text-base font-black">No data available!</span>
                                 </td>
                             </tr>
@@ -84,9 +84,9 @@
                 </table>
             </x-card.body>
 
-            @if ($sliders->total() > 10)
+            @if ($partners->total() > 10)
                 <x-card.footer>
-                    {{ $sliders->links() }}
+                    {{ $partners->links() }}
                 </x-card.footer>
             @endif
 
@@ -95,10 +95,10 @@
     @endif
 
     @if ($create)
-        @include('livewire.slider.create')
+        @include('livewire.partner.create')
     @endif
     @if ($edit)
-        @include('livewire.slider.edit')
+        @include('livewire.partner.edit')
     @endif
 
 </div>

@@ -1,10 +1,10 @@
 <div>
-    @section('title', 'Slider |')
-    @if ($slider_list)
+    @section('title', 'Portfolio |')
+    @if ($table_list)
         <x-card>
             <x-card.header>
-                <h2>Slider List</h2>
-                <x-button wire:click.prevent="createItem()">Add New Slider</x-button>
+                <h2>Portfolio List</h2>
+                <x-button wire:click.prevent="createItem()">Add New Portfolio</x-button>
             </x-card.header>
             <x-card.body>
                 <div class="p-4">
@@ -22,6 +22,14 @@
                             placeholder="Search" wire:model.debounce.500ms="search">
                     </div>
                 </div>
+                <div>
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                </div>
+
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -29,10 +37,10 @@
                                 SL
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Slider Image
+                                Portfolio Image
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Title
+                                Name
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Create at
@@ -47,17 +55,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($sliders as $key=>$item)
+                        @forelse ($portfolios as $key=>$item)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                    {{$loop->index +1 }}
+                                    {{$key +  1 }}
                                 </th>
                                 <td class="px-6 py-4">
                                     <img src="{{asset('storage')}}/{{$item->img_url}}" class="w-14 h-14 rounded drop-shadow-lg" alt="">
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $item->title }}
+                                    {{ $item->name }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->created_at }}
@@ -84,9 +92,9 @@
                 </table>
             </x-card.body>
 
-            @if ($sliders->total() > 10)
+            @if ($portfolios->total() > 10)
                 <x-card.footer>
-                    {{ $sliders->links() }}
+                    {{ $portfolios->links() }}
                 </x-card.footer>
             @endif
 
@@ -95,10 +103,10 @@
     @endif
 
     @if ($create)
-        @include('livewire.slider.create')
+        @include('livewire.portfolio.create')
     @endif
     @if ($edit)
-        @include('livewire.slider.edit')
+        @include('livewire.portfolio.edit')
     @endif
 
 </div>

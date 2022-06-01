@@ -11,6 +11,7 @@ class Portfolio extends Model
 
     protected $fillable = [
         'uuid',
+        'name',
         'img_url',
     ];
 }

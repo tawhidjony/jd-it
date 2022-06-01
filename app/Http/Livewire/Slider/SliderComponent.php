@@ -18,8 +18,10 @@ class SliderComponent extends Component
     public $editSlider = [];
     public $title;
     public $img_url;
+    public $delete_id;
     public $editUpdateItem;
     public $search = '';
+    protected $listeners = ['deleteConfirm' => 'deleteProduct'];
 
     public function saveSlider()
     {
@@ -72,6 +74,18 @@ class SliderComponent extends Component
         $this->create = false;
         $this->edit = false;
         $this->slider_list = true;
+    }
+    public function deleteConfirmation($id)
+    {
+        $this->delete_id = $id;
+        $this->dispatchBrowserEvent('delete-item');
+
+    }
+    public function deleteProduct()
+    {
+        $sliderItem = Slider::find($this->delete_id);
+        Storage::disk('public')->delete($sliderItem->img_url);
+        $sliderItem->delete();
     }
     public function render()
     {
