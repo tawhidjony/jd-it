@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Livewire\Contact\ContactComponent;
 use App\Http\Livewire\Partner\PartnerComponent;
@@ -11,7 +12,6 @@ use App\Http\Livewire\Profile\Profile;
 use App\Http\Livewire\Setting\Settings;
 use App\Http\Livewire\Slider\SliderComponent;
 use App\Http\Livewire\Testimonial\TestimonialComponent;
-use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $sliders = Slider::all();
-    return view('frontend.home.index', compact('sliders'));
-})->name('/');
+Route::get('/', [HomePageController::class,'index'])->name('/');
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-store', [ContactController::class, 'store'])->name('contact.store');

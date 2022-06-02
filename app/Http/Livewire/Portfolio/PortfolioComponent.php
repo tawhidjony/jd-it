@@ -29,20 +29,26 @@ class PortfolioComponent extends Component
             'img_url'=>'required',
         ]);
 
-        if ($this->img_url) {
-			$storeDataValidate['img_url'] = $this->img_url->store('portfolios', 'public');
+        try {
+            if ($this->img_url) {
+                $storeDataValidate['img_url'] = $this->img_url->store('portfolios', 'public');
+            }
+            $storeDataValidate['uuid'] = Str::uuid();
+            $storeData = Portfolio::create($storeDataValidate);
+            if( $storeData){
+                $this->success('Portfolio has been created successfully ');
+                $this->reset();
+                $this->create = false;
+                $this->table_list = true;
+            }else{
+                $this->error('Something went wrong');
+            }
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
         }
-        $storeDataValidate['uuid'] = Str::uuid();
-        Portfolio::create($storeDataValidate);
-        $this->reset();
-        $this->create = false;
-        $this->table_list = true;
-        $this->error('Portfolio has been created successfully ');
     }
     public function updateSingleItem($id)
     {
-
-        $this->warning('Portfolio has been created successfully ');
         $updateDataValidate = $this->validate([
             'name'=>'required',
         ]);
@@ -54,6 +60,7 @@ class PortfolioComponent extends Component
         $updateData = Portfolio::find($id);
         $updateData->update($updateDataValidate);
         $this->reset();
+        $this->success('Portfolio has been created successfully ');
         $this->create = false;
         $this->table_list = true;
     }

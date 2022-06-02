@@ -1,6 +1,5 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-inner relative w-full overflow-hidden h-[600px]">
-
         @foreach ($sliders as $key => $item)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}  relative float-left w-full">
                 <img src="{{ asset('storage') }}/{{$item->img_url}}" class=" object-center h-[600px] w-full" alt="Wild Landscape" />

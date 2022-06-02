@@ -63,7 +63,7 @@
                                     <img src="{{asset('storage')}}/{{$item->img_url}}" class="w-14 h-14 rounded drop-shadow-lg" alt="">
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $item->title }}
+                                    {{ Str::limit(strip_tags($item->title), 25) }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->name }}

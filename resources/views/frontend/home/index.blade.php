@@ -231,6 +231,7 @@ $partner = [
         </div>
     </section>
 
+    {{-- portfolio --}}
     <section class="my-10">
         <div class="flex items-center justify-center my-10">
             <h2 class="inline px-3 text-2xl font-black text-center capitalize border-b-2 border-green-600 ">
@@ -239,14 +240,13 @@ $partner = [
         </div>
         <div class="container">
             <div class="grid grid-cols-12 gap-6">
-                @foreach ($portfolio as $item)
+                @foreach ($portfolios as $item)
                     <div class="md:col-span-6 lg:col-span-4 xl:col-span-4 2xl:col-span-3">
                         <div class="overflow-hidden rounded h-[400px] border rounde"
-                            style="background: url({{ $item['url'] }})">
-
+                            style="background: url({{asset('storage')}}/{{ $item->img_url }})">
                             <div class="h-full p-2 backdrop-blur-[10px] bg-white/30">
                                 <img class="object-contain h-full mx-auto duration-500 ease-in rounded hover:scale-125"
-                                    src="{{ $item['url'] }}" alt="">
+                                    src="{{asset('storage')}}/{{ $item->img_url }}" alt="">
                             </div>
 
                         </div>
@@ -279,44 +279,27 @@ $partner = [
                     </div>
                     <div class="absolute top-0 bottom-0 -right-28">
                         <div class="flex flex-col items-center justify-end w-20 h-full space-y-4 rounded-lg">
+                            @foreach ($testimonials as $key=>$item)
                             <div>
                                 <img class="p-1 transition duration-300 delay-150 rounded-full w-14 h-14 hover:-translate-y-2 hover:ring-1 hover:ring-green-600"
-                                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880"
-                                    alt="">
+                                    src="{{asset('storage')}}/{{ $item->img_url }}" alt="">
                             </div>
-                            <div>
-                                <img class="p-1 transition duration-300 delay-150 rounded-full w-14 h-14 hover:-translate-y-2 hover:ring-1 hover:ring-green-600"
-                                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880"
-                                    alt="">
-                            </div>
-                            <div>
-                                <img class="p-1 transition duration-300 delay-150 rounded-full w-14 h-14 hover:-translate-y-2 hover:ring-1 hover:ring-green-600"
-                                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880"
-                                    alt="">
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="w-4/6 mx-auto my-auto space-y-4">
                         <div class="flex items-center justify-center overflow-hidden ">
                             <img class="w-20 h-20 rounded-full"
-                                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880"
-                                alt="">
+                                src="{{asset('storage')}}/{{ $testimonials[0]->img_url }}" alt="">
                         </div>
                         <div class="w-full text-center">
-                            <p class="text-sm font-light">For a free contact form, this works great. They even include
-                                form
-                                submission data in the
-                                admin,
-                                which...
-
-                            </p>
+                            <p class="text-sm font-light">{{$testimonials[0]->title}}</p>
                         </div>
                         <div class="w-full text-center">
-                            <h2 class="text-2xl font-black text-green-600">Brian Jackson</h2>
-                            <p class="text-base font-extralight text-slate-400">CMO Of Kinsta</p>
+                            <h2 class="text-2xl font-black text-green-600">{{$testimonials[0]->name}}</h2>
+                            <p class="text-base font-extralight text-slate-400">{{$testimonials[0]->designation}}</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -328,9 +311,9 @@ $partner = [
 
         <div class="container">
             <div class="grid grid-cols-12 gap-6">
-                @foreach ($partner as $item)
+                @foreach ($partners as $item)
                     <div class="md:col-span-6  lg:col-span-4 xl:col-span-4 2xl:col-span-3">
-                        <img src="{{ $item['url'] }}" class="object-contain w-full p-2 border rounded shadow h-28" alt="">
+                        <img src="{{ asset('storage') }}/{{ $item->img_url }}" class="object-contain w-full p-2 border rounded shadow h-28" alt="">
                     </div>
                 @endforeach
             </div>
