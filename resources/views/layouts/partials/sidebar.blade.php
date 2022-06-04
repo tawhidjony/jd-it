@@ -36,24 +36,36 @@
             'name' => 'Contacts',
             'active' =>'',
             ],
+        '6' => [
+            'icon' => 'las la-box',
+            'route' => 'news_letters.index',
+            'name' => 'News Letter',
+            'active' =>'',
+            ],
+        '6' => [
+            'icon' => 'las la-box',
+            'route' => 'career.index',
+            'name' => 'Careers',
+            'active' =>'',
+            ],
     ];
 @endphp
 
 <div class="navigation border-l-[15px] border-gray-400 bg-gray-400 dark:border-gray-800 dark:bg-gray-800">
     <ul>
         <li>
-            <a href="">
+            <a href="{{route('/')}}">
                 <span class="text-4xl text-white icon las la-stop-circle"></span>
                 <span class="text-xl text-white uppercase title">Jadroo-IT </span>
             </a>
         </li>
         @foreach ($sideBarMenuList as $key=>$item)
-        <li class=" {{ Route::currentRouteName() == $item['route'] ? 'active' : ''}} ">
-            <a href="{{route($item['route'])}}">
-                <span class="text-lg icon {{$item['icon']}}"></span>
-                <span class="title">{{$item['name']}}</span>
-            </a>
-        </li>
+            <li class=" {{ Route::currentRouteName() == $item['route'] ? 'active' : ''}} ">
+                <a href="{{route($item['route'])}}">
+                    <span class="text-lg icon {{$item['icon']}}"></span>
+                    <span class="title">{{$item['name']}}</span>
+                </a>
+            </li>
         @endforeach
 
         {{-- <li class="active">
