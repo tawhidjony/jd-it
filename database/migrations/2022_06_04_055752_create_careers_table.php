@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('experience');
             $table->date('deadline');
             $table->longText('job_description');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

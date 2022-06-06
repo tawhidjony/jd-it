@@ -24,11 +24,13 @@
             </div>
             <div class="col-span-12">
                 <x-label class="mb-2">Job Description</x-label>
-               <textarea rows="5" cols="3" placeholder="Enter job description" class="border w-full rounded shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+               <textarea id="editor" rows="5" cols="3" placeholder="Enter job description" class="border w-full rounded shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
                 @error('designation')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
+
             </div>
+
         </div>
     </div>
 </div>

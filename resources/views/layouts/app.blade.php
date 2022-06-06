@@ -11,11 +11,11 @@
     @livewireStyles
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 </head>
 
 <body class="bg-slate-100 dark:bg-[#081724]">
@@ -31,11 +31,36 @@
 
     @livewireScripts
     <!-- choose one -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
     <script src="{{asset('js/notification.js')}}"> </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '#career-editor' ),{
+                    ckfinder: {
+                        uploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+                    }
+                }
+                )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
     <script>
         // Toggle menu
         const toggle = document.getElementById("toggleIcon");

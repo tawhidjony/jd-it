@@ -1,10 +1,11 @@
+
 <div>
     @section('title', 'Careers |')
     @if ($table_list)
         <x-card>
             <x-card.header>
                 <h2>Careers List</h2>
-                <x-button wire:click.prevent="createItem()">Add New Career</x-button>
+                <a href="{{route('career.create')}}" class="border bg-black px-3 py-2 rounded text-white" >Add New Career</a>
             </x-card.header>
             <x-card.body>
                 <div class="p-4">
@@ -46,10 +47,10 @@
                             <th scope="col" class="px-6 py-3">
                                 Updated at
                             </th>
-                            <th scope="col" class="pr-10 text-right">
-                                {{-- <span class="sr-only">Action</span> --}}
+                            {{-- <th scope="col" class="pr-10 text-right">
+                                <span class="sr-only">Action</span>
                                 Action
-                            </th>
+                            </th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +70,7 @@
                                     {{ $item->deadline }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $item->job_description }}
+                                    {!! Str::limit(strip_tags($item->job_description), 35) !!}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->created_at }}
@@ -77,13 +78,13 @@
                                 <td class="px-6 py-4">
                                     {{ $item->updated_at }}
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                {{-- <td class="px-6 py-4 text-right">
                                     <x-button type="button" wire:click.prevent="editItem({{ $item->id }})">Edit
                                     </x-button>
                                     <x-button type="button" class="bg-red-600"
                                         wire:click.prevent="deleteConfirmation({{ $item->id }})">Delete
                                     </x-button>
-                                </td>
+                                </td> --}}
                             </tr>
                         @empty
                             <tr>
@@ -103,14 +104,6 @@
             @endif
 
         </x-card>
-
     @endif
 
-    @if ($create)
-        @include('livewire.career.create')
-    @endif
-    @if ($edit)
-        @include('livewire.career.edit')
-    @endif
 
-</div>

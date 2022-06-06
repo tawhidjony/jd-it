@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -31,6 +32,7 @@ Route::get('/', [HomePageController::class,'index'])->name('/');
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-store', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/career', [CareerController::class, 'career_job'])->name('career');
 Route::post('/news-letter', [HomePageController::class, 'newsLetter'])->name('newsLetter.store');
 
 
@@ -45,6 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/contacts', ContactComponent::class)->name('contact.list');
         Route::get('/news-letters', NewsLetterComponent::class)->name('news_letters.index');
         Route::get('/careers', CareerComponent::class)->name('career.index');
+        Route::get('/careers/create', [CareerController::class, 'create'])->name('career.create');
+        Route::post('/careers/store', [CareerController::class, 'store'])->name('career.store');
+        Route::post('/ckeditor/upload', [CareerController::class, 'ckeditorUploadImage'])->name('ckeditor.upload');
         Route::get('/settings', Settings::class)->name('settings');
         Route::get('/profile', Profile::class)->name('profile');
         Route::resource('roles', RoleController::class);
