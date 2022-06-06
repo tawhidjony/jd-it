@@ -39,11 +39,14 @@
                         </div>
                     </div>
                     <div class="h-full w-full border-l border-r border-gray-50 px-8 pb-6">
+                        <form action="{{route('newsLetter.store')}}" method="POST">
                         <div class="flex flex-col justify-center items-center h-full space-y-4">
                             <h2 class="text-white font-black text-2xl">GET OUR NEWSLETTER</h2>
-                            <input type="text" class="rounded w-full" placeholder="Email" />
-                            <button class="rounded px-3 py-2 bg-green-600 text-white">SUBMIT</button>
-                        </div>
+                                @csrf
+                                <input type="text" name="email" class="rounded w-full" placeholder="Email" />
+                                <button type="submit" class="rounded px-3 py-2 bg-green-600 text-white">SUBMIT</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="h-full w-full ml-8 pb-6">
                         <div>

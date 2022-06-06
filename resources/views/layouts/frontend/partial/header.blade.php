@@ -61,7 +61,7 @@ $megamenu = [
     <div class="h-20">
         <div class="container flex items-center justify-between h-full">
             <div class="flex items-center">
-                <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" alt="" class="pr-3 w-36">
+               <a href="{{route('/')}}"> <img src="https://jadrooit.com/wp-content/uploads/2022/04/2.png" alt="" class="pr-3 w-36"></a>
                 <h1 class="pl-3 text-2xl border-l">Jadroo-IT</h1>
             </div>
             <div>
@@ -102,7 +102,7 @@ $megamenu = [
                     </li>
                     <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="{{route('product.index')}}">Product</a></li>
                     <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">About</a></li>
-                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="">Career</a></li>
+                    <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="{{route('career')}}">Career</a></li>
                     <li class="lg:px-3 xl:px-3 lg:py-2 xl:py-2 hover:text-green-600"><a href="{{route('contact.index')}}">Contact</a></li>
                 </ul>
             </div>
