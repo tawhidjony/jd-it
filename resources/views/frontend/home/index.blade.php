@@ -290,14 +290,14 @@ $partner = [
                     <div class="w-4/6 mx-auto my-auto space-y-4">
                         <div class="flex items-center justify-center overflow-hidden ">
                             <img class="w-20 h-20 rounded-full"
-                                src="{{asset('storage')}}/{{ $testimonials[0]->img_url }}" alt="">
+                                src="{{asset('storage')}}/{{ $testimonials[0]->img_url ?? '' }}" alt="">
                         </div>
                         <div class="w-full text-center">
-                            <p class="text-sm font-light">{{$testimonials[0]->title}}</p>
+                            <p class="text-sm font-light">{{$testimonials[0]->title ?? ''}}</p>
                         </div>
                         <div class="w-full text-center">
-                            <h2 class="text-2xl font-black text-green-600">{{$testimonials[0]->name}}</h2>
-                            <p class="text-base font-extralight text-slate-400">{{$testimonials[0]->designation}}</p>
+                            <h2 class="text-2xl font-black text-green-600">{{$testimonials[0]->name ?? ''}}</h2>
+                            <p class="text-base font-extralight text-slate-400">{{$testimonials[0]->designation ?? ''}}</p>
                         </div>
                     </div>
                 </div>
